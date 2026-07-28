@@ -1,6 +1,6 @@
 # ThinkPad P53 - macOS OpenCore EFI
 
-Krótka, przejrzysta konfiguracja OpenCore EFI dla laptopa **Lenovo ThinkPad P53** przygotowana pod system macOS.
+Krótka, przejrzysta konfiguracja OpenCore EFI dla laptopa **Lenovo ThinkPad P53** przygotowana pod system macOS Sonoma.
 
 ---
 
