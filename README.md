@@ -8,17 +8,18 @@ Otwarta konfiguracja OpenCore dla laptopa **Lenovo ThinkPad P53**.
 
 ## 💻 Specyfikacja sprzętowa / Hardware Status
 
-| Komponent | Stan | Uwagi |
-| :--- | :---: | :--- |
-| **CPU** | 🟢 Działa | Zoptymalizowane zarządzanie energią |
-| **iGPU (Intel UHD)** | 🟢 Działa | **Pełna akceleracja graficzna (Metal)** |
-| **Dedykowana GPU (NVIDIA)** | 🔴 Niewspierana | Wyłączona za pomocą SSDT (zgodnie z ograniczeniami macOS) |
-| **Porty USB** | 🟢 Działa | Pełne zmapowanie portów (USBMap / UTBMap) |
-| **Wi-Fi & Bluetooth** | 🟢 Działa | Zależnie od zainstalowanej karty (Kexty Intel / Broadcom) |
-| **Trackpad & Klawiatura** | 🟢 Działa | Działają gesty oraz klawisze funkcyjne |
-| **Dźwięk (Audio)** | 🔴 Nie działa | Brak dźwięku z głośników (do dopracowania layout-id / AppleALC) |
-| **Mikrofon** | 🔴 Nie działa | Wbudowany mikrofon nie jest obecnie wykrywany |
-| **Sleep / Wake** | 🟡 Częściowo | Wymaga dalszych testów pod macOS Tahoe |
+| Komponent | Model / Opis | Stan | Uwagi |
+| :--- | :--- | :---: | :--- |
+| **CPU** | **Intel Core i7-9850H** | 🟢 Działa | Zoptymalizowane zarządzanie energią |
+| **Dysk SSD** | **Western Digital PC SN740** | 🟢 Działa | System macOS zainstalowany i uruchomiony na tym dysku |
+| **iGPU** | Intel UHD Graphics 630 | 🟢 Działa | **Pełna akceleracja graficzna (Metal)** |
+| **dGPU** | Dedykowana karta NVIDIA | 🔴 Niewspierana | Wyłączona za pomocą SSDT (zgodnie z ograniczeniami macOS) |
+| **Porty USB** | USB 3.1 / Type-C | 🟢 Działa | Pełne zmapowanie portów (USBMap / UTBMap) |
+| **Wi-Fi & Bluetooth** | Karta fabryczna / kompatybilna | 🟢 Działa | Wsparcie przez odpowiednie kexty |
+| **Trackpad & Klawiatura** | Synaptics / PS2 | 🟢 Działa | Działają gesty oraz klawisze funkcyjne |
+| **Dźwięk (Audio)** | **Synaptics Audio** | 🔴 Nie działa | Brak dźwięku z głośników (do dopracowania layout-id / AppleALC) |
+| **Mikrofon** | Wbudowany mikrofon | 🔴 Nie działa | Mikrofon nie jest obecnie wykrywany |
+| **Sleep / Wake** | Uśpienie | 🟡 Częściowo | Wymaga dalszych testów pod macOS Tahoe |
 
 ---
 
@@ -30,7 +31,7 @@ Ze względów bezpieczeństwa oraz ochrony konta Apple ID, z pliku `config.plist
 
 1. Pobierz narzędzie [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
 2. Otwórz `config.plist` w edytorze (np. *ProperTree*).
-3. Wygeneruj nowe dane dla odpowiedniego modelu (np. `MacBookPro16,1` lub dedykowanego pod Twoją konfigurację).
+3. Wygeneruj nowe dane dla odpowiedniego modelu (np. `MacBookPro16,1`).
 4. Uzupełnij poniższe pola w `PlatformInfo -> Generic`:
    * `SystemSerialNumber`
    * `MLB`
@@ -53,8 +54,8 @@ Ze względów bezpieczeństwa oraz ochrony konta Apple ID, z pliku `config.plist
 
 ## 🛠️ Known Issues / Do zrobienia (To-Do)
 
-- [ ] Naprawa kextów audio (**AppleALC**) pod kątem obsługi wyjścia audio i wbudowanego mikrofonu w macOS Tahoe.
-- [ ] Dalsze dopracowywanie zarządzania energią na nowszej wersji systemu.
+- [ ] Naprawa kextów audio (**AppleALC**) pod kątem obsługi wyjścia audio Synaptics i wbudowanego mikrofonu w macOS Tahoe.
+- [ ] Dalsze dopracowywanie zarządzania energią na procesorze i7-9850H.
 
 ---
 
